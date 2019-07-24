@@ -17,6 +17,12 @@ package edu.cnm.deepdive.qod;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
+import org.springframework.security.oauth2.config.annotation.web.configuration.ResourceServerConfigurerAdapter;
+import org.springframework.security.oauth2.config.annotation.web.configurers.ResourceServerSecurityConfigurer;
 
 /**
  * Main class of the QoD application. All of the work of application startup is performed (directly
@@ -25,7 +31,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * application.
  */
 @SpringBootApplication
-public class QodApplication {
+@EnableWebSecurity
+@EnableResourceServer
+public class QodApplication extends ResourceServerConfigurerAdapter {
 
   /**
    * Main entry point for the QoD Spring Boot application. Any command line arguments will be
@@ -35,6 +43,17 @@ public class QodApplication {
    */
   public static void main(String[] args) {
     SpringApplication.run(QodApplication.class, args);
+  }
+
+  @Override
+  public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
+    super.configure(resources);
+  }
+
+  @Override
+  public void configure(HttpSecurity http) throws Exception {
+    http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+    http.authorizeRequests().anyRequest().hasRole("USER");
   }
 
 }
