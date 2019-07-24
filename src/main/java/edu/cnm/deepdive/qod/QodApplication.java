@@ -15,6 +15,7 @@
  */
 package edu.cnm.deepdive.qod;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -35,6 +36,9 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 @EnableResourceServer
 public class QodApplication extends ResourceServerConfigurerAdapter {
 
+  @Value("${oauth.clientId}")
+  private String clientId;
+
   /**
    * Main entry point for the QoD Spring Boot application. Any command line arguments will be
    * forwarded to {@link SpringApplication#run(Class, String...)}.
@@ -47,7 +51,7 @@ public class QodApplication extends ResourceServerConfigurerAdapter {
 
   @Override
   public void configure(ResourceServerSecurityConfigurer resources) throws Exception {
-    super.configure(resources);
+    resources.resourceId(clientId);
   }
 
   @Override
