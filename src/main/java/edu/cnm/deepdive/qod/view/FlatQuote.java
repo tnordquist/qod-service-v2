@@ -26,30 +26,22 @@ import java.util.UUID;
 public interface FlatQuote {
 
   /**
-   * Returns the universally unique ID (UUID) of a quote resource.
-   *
-   * @return quote UUID.
+   * Universally unique ID (UUID) of a quote resource.
    */
   UUID getId();
 
   /**
-   * Returns the date-time stamp recorded when a quote resource is first written to the database.
-   *
-   * @return creation timestamp.
+   * Quote creation timestamp.
    */
   Date getCreated();
 
   /**
-   * Returns the text of the quote.
-   *
-   * @return quote text.
+   * Text content of quote.
    */
   String getText();
 
   /**
-   * Returns a URL referencing the quote resource.
-   *
-   * @return quote URL.
+   * URL of the quote resource.
    */
   URI getHref();
 

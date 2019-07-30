@@ -25,7 +25,6 @@ import org.springframework.security.oauth2.provider.token.AccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.DefaultAccessTokenConverter;
 import org.springframework.security.oauth2.provider.token.ResourceServerTokenServices;
 import org.springframework.stereotype.Component;
-import sun.java2d.pipe.SpanShapeRenderer.Simple;
 
 @Component
 public class GoogleTokenServices implements ResourceServerTokenServices {

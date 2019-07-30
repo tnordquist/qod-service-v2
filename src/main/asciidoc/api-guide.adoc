@@ -1,0 +1,202 @@
+= Quote of the Day (or the Moment) REST docs
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+:operation-curl-request-title: Example request
+:operation-http-response-title: Example response
+
+[[quotes]]
+= Quotes API
+
+URL endpoints and HTTP methods for adding, updating, and deleting quotes, and for managing quote attributions.
+
+== `/quotes/`
+
+=== `GET`
+
+[pass]
+include::{snippets}/quote-controller-test/get-quotes/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/get-quotes/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/get-quotes/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/get-quotes/http-response.adoc[]
+.Response array element object properties
+include::{snippets}/quote-controller-test/get-quote/auto-response-fields.adoc[]
+
+=== `POST`
+
+[pass]
+include::{snippets}/quote-controller-test/post-quote/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/post-quote/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/post-quote/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/post-quote/http-response.adoc[]
+.Request object properties
+include::{snippets}/quote-controller-test/post-quote/auto-request-fields.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/post-quote/auto-response-fields.adoc[]
+
+== `/quotes/{quoteId}`
+
+Retrieve, modify, or delete a single quote.
+
+=== `GET`
+
+include::{snippets}/quote-controller-test/get-quote/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/get-quote/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/get-quote/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/get-quote/http-response.adoc[]
+.Path parameters
+include::{snippets}/quote-controller-test/get-quote/auto-path-parameters.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/get-quote/auto-response-fields.adoc[]
+
+=== `PUT`
+
+include::{snippets}/quote-controller-test/put-quote/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/put-quote/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/put-quote/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/put-quote/http-response.adoc[]
+.Path parameters
+include::{snippets}/quote-controller-test/put-quote/auto-path-parameters.adoc[]
+.Request object properties
+include::{snippets}/quote-controller-test/put-quote/auto-request-fields.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/put-quote/auto-response-fields.adoc[]
+
+=== `DELETE`
+
+include::{snippets}/quote-controller-test/delete-quote/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/delete-quote/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/delete-quote/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/delete-quote/http-response.adoc[]
+.Path parameters
+include::{snippets}/quote-controller-test/delete-quote/auto-path-parameters.adoc[]
+
+== `/quotes/random`
+
+=== `GET`
+
+include::{snippets}/quote-controller-test/get-random/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/get-random/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/get-random/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/get-random/http-response.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/get-random/auto-response-fields.adoc[]
+
+== `/quotes/qod`
+
+=== `GET`
+
+include::{snippets}/quote-controller-test/get-qod/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/get-qod/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/get-qod/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/get-qod/http-response.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/get-qod/auto-response-fields.adoc[]
+
+== `/quotes/search`
+
+=== `GET`
+
+include::{snippets}/quote-controller-test/search-quotes/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/search-quotes/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/search-quotes/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/search-quotes/http-response.adoc[]
+.Query string parameters
+include::{snippets}/quote-controller-test/search-quotes/auto-request-parameters.adoc[]
+.Response array element object properties
+include::{snippets}/quote-controller-test/get-quotes/auto-response-fields.adoc[]
+
+== `/quotes/{quoteId}/sources/{sourceId}`
+
+Control attribution for a quote.
+
+=== `PUT`
+
+include::{snippets}/quote-controller-test/attribute-quote/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/attribute-quote/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/attribute-quote/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/attribute-quote/http-response.adoc[]
+.Path parameters
+include::{snippets}/quote-controller-test/attribute-quote/auto-path-parameters.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/attribute-quote/auto-response-fields.adoc[]
+
+=== `GET`
+
+include::{snippets}/quote-controller-test/get-quote-attribution/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/get-quote-attribution/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/get-quote-attribution/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/get-quote-attribution/http-response.adoc[]
+.Path parameters
+include::{snippets}/quote-controller-test/get-quote-attribution/auto-path-parameters.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/get-quote-attribution/auto-response-fields.adoc[]
+
+=== `DELETE`
+
+include::{snippets}/quote-controller-test/unattribute-quote/auto-description.adoc[]
+<br/>
+
+include::{snippets}/quote-controller-test/unattribute-quote/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/quote-controller-test/unattribute-quote/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/quote-controller-test/unattribute-quote/http-response.adoc[]
+.Path parameters
+include::{snippets}/quote-controller-test/unattribute-quote/auto-path-parameters.adoc[]
+.Response object properties
+include::{snippets}/quote-controller-test/unattribute-quote/auto-response-fields.adoc[]

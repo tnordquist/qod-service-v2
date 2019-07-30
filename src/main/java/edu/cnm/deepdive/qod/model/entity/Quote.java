@@ -38,6 +38,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OrderBy;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -71,6 +73,8 @@ public class Quote implements FlatQuote {
   private Date created;
 
   @NonNull
+  @NotNull
+  @NotBlank
   @Column(length = 4096, nullable = false, unique = true)
   private String text;
 
@@ -98,7 +102,7 @@ public class Quote implements FlatQuote {
   }
 
   /**
-   * Sets the text content of this <code>Quote</code> instance.
+   * Sets the text content of this {@code Quote} instance.
    *
    * @param text actual quote.
    */
@@ -107,9 +111,7 @@ public class Quote implements FlatQuote {
   }
 
   /**
-   * Returns a {@link Set} of the {@link Source} instances related to this <code>Quote</code>.
-   *
-   * @return {@link Source} set.
+   * {@link Set Set&lt;Source&gt;} to which this {@code Quote} is attributed.
    */
   public Set<Source> getSources() {
     return sources;
@@ -143,12 +145,12 @@ public class Quote implements FlatQuote {
 
   /**
    * Implements an equality test based on a case-insensitive comparison of the text returned by
-   * {@link #getText()}. If the other object is <code>null</code>, or if one (but not both) of the
-   * instances' {@link #getText()} values is <code>null</code>, then <code>false</code> is returned;
+   * {@link #getText()}. If the other object is {@code null}, or if one (but not both) of the
+   * instances' {@link #getText()} values is {@code null}, then {@code false} is returned;
    * otherwise, the text values are compared using {@link String#equalsIgnoreCase(String)}.
    *
    * @param obj object to which this instance will compare itself, based on {@link #getText()}.
-   * @return <code>true</code> if the values are equal, ignoring case; <code>false</code> otherwise.
+   * @return {@code true} if the values are equal, ignoring case; {@code false} otherwise.
    */
   @Override
   public boolean equals(Object obj) {
