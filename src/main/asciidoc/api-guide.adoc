@@ -200,3 +200,42 @@ include::{snippets}/quote-controller-test/unattribute-quote/http-response.adoc[]
 include::{snippets}/quote-controller-test/unattribute-quote/auto-path-parameters.adoc[]
 .Response object properties
 include::{snippets}/quote-controller-test/unattribute-quote/auto-response-fields.adoc[]
+
+[[sources]]
+= Sources API
+
+URL endpoints and HTTP methods for adding, updating, and deleting sources, and for managing quote attributions.
+
+== `/sources/`
+
+=== `GET`
+
+[pass]
+include::{snippets}/source-controller-test/get-sources/auto-description.adoc[]
+<br/>
+
+include::{snippets}/source-controller-test/get-sources/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/source-controller-test/get-sources/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/source-controller-test/get-sources/http-response.adoc[]
+.Response array element object properties
+include::{snippets}/source-controller-test/get-sources/auto-response-fields.adoc[]
+
+=== `POST`
+
+[pass]
+include::{snippets}/source-controller-test/post-source/auto-description.adoc[]
+<br/>
+
+include::{snippets}/source-controller-test/post-source/auto-authorization.adoc[]
+
+.HTTP sample request
+include::{snippets}/source-controller-test/post-source/http-request.adoc[]
+.HTTP sample response
+include::{snippets}/source-controller-test/post-source/http-response.adoc[]
+.Request object properties
+include::{snippets}/source-controller-test/post-source/auto-request-fields.adoc[]
+.Response object properties
+include::{snippets}/source-controller-test/post-source/auto-response-fields.adoc[]
